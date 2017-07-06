@@ -1,0 +1,42 @@
+Name:                cytoscape
+Version:             0.2
+Synopsis:            Haskell bindings to Cytoscape.js
+Description:
+            Generate web-based plots with the Cytoscape.js library.
+
+
+License:             MIT
+License-file:        LICENSE
+Author:              Tom Nielsen
+Maintainer:          tom.nielsen@tweag.io
+build-type:          Simple
+Cabal-Version: 	     >= 1.10
+homepage:            https://github.com/tweag/cytoscape-hs
+bug-reports:         https://github.com/tweag/cytoscape-hs/issues
+category:            Graphics, Charts
+Tested-With:         GHC == 7.8.4, GHC == 7.10.2, GHC == 7.10.3, GHC == 8.0.1
+
+
+extra-source-files:
+                   changelog.md
+
+
+Library
+   ghc-options:       -Wall -fno-warn-type-defaults
+   hs-source-dirs:    src
+   default-language:  Haskell2010
+
+
+   Exposed-modules:
+                   Graphics.Cytoscape
+
+   Build-depends:
+                 base                    >= 4.6 && <5
+               , aeson
+               , lucid
+               , blaze-html
+               , blaze-markup
+               , text
+               , bytestring
+               , microlens-th
+               , microlens
