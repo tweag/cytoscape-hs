@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings, ExtendedDefaultRules #-}
+
 module Graphics.Cytoscape where
 
 import Data.Aeson

@@ -40,3 +40,13 @@ Library
                , bytestring
                , microlens-th
                , microlens
+
+Test-suite test-cytoscape
+  type:       exitcode-stdio-1.0
+  default-language:  Haskell2010
+
+  main-is: TestCytoscape.hs
+  build-depends:       base >=4.6 && <5
+                     , lucid
+                     , cytoscape
+                     , text
