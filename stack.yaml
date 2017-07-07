@@ -37,6 +37,12 @@ resolver: lts-8.5
 # will not be run. This is useful for tweaking upstream packages.
 packages:
 - '.'
+- location:
+    git: https://github.com/filopodia/open.git
+    commit: 6a035b155249f8036b9b579fec9eaa6cd174c46e
+  extra-dep: true
+  subdirs:
+  - lucid-extras
 
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)

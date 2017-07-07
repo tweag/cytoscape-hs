@@ -34,6 +34,7 @@ Library
                  base                    >= 4.6 && <5
                , aeson
                , lucid
+               , lucid-extras
                , blaze-html
                , blaze-markup
                , text
@@ -48,5 +49,6 @@ Test-suite test-cytoscape
   main-is: TestCytoscape.hs
   build-depends:       base >=4.6 && <5
                      , lucid
+                     , lucid-extras
                      , cytoscape
                      , text
