@@ -50,6 +50,7 @@ instance ToJSON Edge where
 data NodeData = NodeData {
     _nodedata_id   :: Text
   , _nodedata_name :: Text
+  , _nodedata_custom :: Value
 } deriving (Show, Generic)
 
 makeLenses ''NodeData
