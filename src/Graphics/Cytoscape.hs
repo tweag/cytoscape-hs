@@ -97,7 +97,7 @@ runCytoscape nodes edges layout styles morejs element = T.unlines [
   "  },",
   "  layout: " <> (decodeUtf8 $ toStrict $ encode layout)<>",",
   "  style: " <> (decodeUtf8 $ toStrict $ encode styles),
-  "})",
+  "});",
   morejs,
   "})"
   ]
