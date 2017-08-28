@@ -20,7 +20,7 @@ testpage =  doctypehtml_ $ do
   body_ $ do
      "Hello World"
      div_ [id_ "cy"] ""
-     script_ $ runCytoscape nodes edges (Layout "cose") styles "#cy"
+     script_ $ runCytoscape nodes edges (Layout "cose") styles "" "#cy"
      style_ "#cy { height: 600px; width: 600px}"
 
 nodes = [Node $ NodeData "a" "foo", Node $ NodeData "b" "bar"]

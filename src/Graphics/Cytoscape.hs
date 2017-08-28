@@ -85,8 +85,8 @@ makeLenses ''Style
 instance ToJSON Style where
   toJSON = genericToJSON $ jsonOptions (Just "style_")
 
-runCytoscape :: [Node] -> [Edge] -> Layout -> [Style] -> Text -> Text
-runCytoscape nodes edges layout styles element = T.unlines [
+runCytoscape :: [Node] -> [Edge] -> Layout -> [Style] -> Text -> Text -> Text
+runCytoscape nodes edges layout styles morejs element = T.unlines [
   "",
   "$(function(){",
   "var cy = cytoscape({",
@@ -97,5 +97,7 @@ runCytoscape nodes edges layout styles element = T.unlines [
   "  },",
   "  layout: " <> (decodeUtf8 $ toStrict $ encode layout)<>",",
   "  style: " <> (decodeUtf8 $ toStrict $ encode styles),
-  "})})"
+  "})",
+  morejs,
+  "})"
   ]
