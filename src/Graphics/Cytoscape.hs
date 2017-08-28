@@ -83,7 +83,9 @@ data Style = Style {
 makeLenses ''Style
 
 instance ToJSON Style where
-  toJSON = genericToJSON $ jsonOptions (Just "style_")
+  toJSON (Style sel sty) =
+      object ["selector" .= sel,
+              "style" .= object (map (\(k,v)-> k .= v) sty)]
 
 runCytoscape :: [Node] -> [Edge] -> Layout -> [Style] -> Text -> Text -> Text
 runCytoscape nodes edges layout styles morejs element = T.unlines [
