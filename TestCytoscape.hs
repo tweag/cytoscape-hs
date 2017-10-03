@@ -23,7 +23,7 @@ testpage =  doctypehtml_ $ do
      script_ $ runCytoscape nodes edges (Layout "cose") styles "" "#cy"
      style_ "#cy { height: 600px; width: 600px}"
 
-nodes = [Node $ NodeData "a" "foo" "", Node $ NodeData "b" "bar" ""]
+nodes = [Node $ NodeData "a" "foo" Nothing [], Node $ NodeData "b" "bar" Nothing []]
 
 edges = [Edge $ EdgeData "a1" "a" "b"]
 

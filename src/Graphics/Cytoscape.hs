@@ -50,15 +50,17 @@ instance ToJSON Edge where
 data NodeData = NodeData {
     _nodedata_id   :: Text
   , _nodedata_name :: Text
+  , _nodedata_parent :: Maybe Text
   , _nodedata_custom :: [(Text,Value)]
 } deriving (Show, Generic)
 
 makeLenses ''NodeData
 
 instance ToJSON NodeData where
-  toJSON (NodeData tid nm custom) =
+  toJSON (NodeData tid nm mpar custom) =
     object $ ["id" .= tid,"name" .= nm]
              ++ map (\(k,v)->k .= v) custom
+             ++ maybe [] (\par -> ["parent" .= par]) mpar
 data Node = Node {
     _node_data :: NodeData
 } deriving (Show, Generic)
